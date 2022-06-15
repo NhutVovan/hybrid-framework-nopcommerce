@@ -331,5 +331,5 @@ public class BasePage {
 	}
 	
 	private long longTimeout = 30;
-	private long shortTimeout = 5;
+	
 }
