@@ -77,10 +77,10 @@ public class RegisterPageObject extends BasePage{
 		return getElementText(driver, RegisterPageUI.REGISTER_SUCCESS_MESSAGE);
 	}
 
-	public void clickToLogoutLink() {
+	public HomePageObject clickToLogoutLink() {
 		waitForElementVisible(driver, RegisterPageUI.LOGOUT_LINK);
 		clickToElement(driver, RegisterPageUI.LOGOUT_LINK);
-		
+		return new HomePageObject(driver);
 	}
 
 	public String getErrorExistingEmailMessage() {

@@ -1,5 +1,6 @@
 package commons;
 
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
@@ -58,6 +59,10 @@ public class BaseTest {
 		return driverBaseTest;
 	}
 	
-	
+	public int GetRandomNumber() {
+		Random Rand = new Random();
+		return Rand.nextInt(999);
+
+	}
 
 }
