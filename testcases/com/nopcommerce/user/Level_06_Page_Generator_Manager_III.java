@@ -8,11 +8,11 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObject.HomePageObject;
-import pageObject.LoginPageObject;
-import pageObject.MyAccountPageObject;
-import pageObject.PageGeneratorManager;
-import pageObject.RegisterPageObject;
+import commons.PageGeneratorManager;
+import pageObject.nopCommerce.user.CustomerInfoPageObject;
+import pageObject.nopCommerce.user.HomePageObject;
+import pageObject.nopCommerce.user.LoginPageObject;
+import pageObject.nopCommerce.user.RegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_III extends BaseTest {
 	
@@ -20,7 +20,7 @@ public class Level_06_Page_Generator_Manager_III extends BaseTest {
 	private HomePageObject homePage;
 	private RegisterPageObject registerPage;
 	private LoginPageObject loginPage;
-	private MyAccountPageObject myAccountPage;
+	private CustomerInfoPageObject myAccountPage;
 	
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, existingEmail, invalidEmail, notFoundEmail, password, wrongPassword;

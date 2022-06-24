@@ -13,9 +13,9 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObject.HomePageObject;
-import pageObject.LoginPageObject;
-import pageObject.RegisterPageObject;
+import pageObject.nopCommerce.user.HomePageObject;
+import pageObject.nopCommerce.user.LoginPageObject;
+import pageObject.nopCommerce.user.RegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_I extends BaseTest {
 	

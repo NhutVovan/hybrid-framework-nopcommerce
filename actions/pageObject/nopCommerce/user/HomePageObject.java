@@ -1,8 +1,9 @@
-package pageObject;
+package pageObject.nopCommerce.user;
 
 import org.openqa.selenium.WebDriver;
 
 import commons.BasePage;
+import commons.PageGeneratorManager;
 import pageUIs.HomePageUI;
 
 
@@ -37,10 +38,11 @@ public class HomePageObject extends BasePage{
 		return isElementDisplayed(driver, HomePageUI.MY_ACCOUNT_LINK);
 	}
 
-	public MyAccountPageObject clickToMyAccountLink() {
+	public CustomerInfoPageObject clickToMyAccountLink() {
 		waitForClickable(driver, HomePageUI.MY_ACCOUNT_LINK);
 		clickToElement(driver, HomePageUI.MY_ACCOUNT_LINK);
-		return PageGeneratorManager.getMyAccountPage(driver);
+		return PageGeneratorManager.getCustomerInfoPage(driver);
 	}
+
 
 }

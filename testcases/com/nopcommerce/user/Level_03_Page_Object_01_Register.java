@@ -11,9 +11,8 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-
-import pageObject.HomePageObject;
-import pageObject.RegisterPageObject;
+import pageObject.nopCommerce.user.HomePageObject;
+import pageObject.nopCommerce.user.RegisterPageObject;
 
 public class Level_03_Page_Object_01_Register {
 	
