@@ -12,7 +12,14 @@ public class Topic_02_Data_Type {
 		// System.out.println(number);
 		// System.out.println(number);
 
-		browserName.equalsIgnoreCase("chrome");
+		if (browserName.equalsIgnoreCase("chrome")){
+			 System.out.println(chrome);
+		}
+		else if (browserName.equalsIgnoreCase("firefox")){
+			 System.out.println(firefox);
+		}
+		else{
+		}
 
 	}
 
