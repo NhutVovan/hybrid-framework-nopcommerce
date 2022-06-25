@@ -26,10 +26,6 @@ public class Level_08_Switch_Role extends BaseTest {
 	private UserHomePageObject userHomePage;
 	private UserRegisterPageObject userRegisterPage;
 	private UserLoginPageObject userLoginPage;
-	private UserCustomerInfoPageObject userCustomerInfoPage;
-	private UserAddressPageObject userAddressPage;
-	private UserMyProductReviewsPageObject userMyProductReviewsPage;
-	private UserRewardPointPageObject userRewardPointPage;
 	private AdminLoginPageObject adminLoginPage;
 	private AdminDashboardPageObject adminDashboardPage;
 	
