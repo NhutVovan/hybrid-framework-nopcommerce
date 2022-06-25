@@ -9,24 +9,24 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObject.nopCommerce.user.AddressPageObject;
-import pageObject.nopCommerce.user.CustomerInfoPageObject;
-import pageObject.nopCommerce.user.HomePageObject;
-import pageObject.nopCommerce.user.LoginPageObject;
-import pageObject.nopCommerce.user.MyProductReviewsPageObject;
-import pageObject.nopCommerce.user.RegisterPageObject;
-import pageObject.nopCommerce.user.RewardPointPageObject;
+import pageObject.nopCommerce.user.UserAddressPageObject;
+import pageObject.nopCommerce.user.UserCustomerInfoPageObject;
+import pageObject.nopCommerce.user.UserHomePageObject;
+import pageObject.nopCommerce.user.UserLoginPageObject;
+import pageObject.nopCommerce.user.UserMyProductReviewsPageObject;
+import pageObject.nopCommerce.user.UserRegisterPageObject;
+import pageObject.nopCommerce.user.UserRewardPointPageObject;
 
 public class Level_07_Switch_Page extends BaseTest {
 	
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private CustomerInfoPageObject customerInfoPage;
-	private AddressPageObject addressPage;
-	private MyProductReviewsPageObject myProductReviewsPage;
-	private RewardPointPageObject rewardPointPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInfoPageObject customerInfoPage;
+	private UserAddressPageObject addressPage;
+	private UserMyProductReviewsPageObject myProductReviewsPage;
+	private UserRewardPointPageObject rewardPointPage;
 	
 	private String firstName, lastName, email, password;
 	
@@ -36,7 +36,7 @@ public class Level_07_Switch_Page extends BaseTest {
 		
 		driver = getBrowserDriver(browserName);
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		firstName = "John";
 		lastName = "Terry";

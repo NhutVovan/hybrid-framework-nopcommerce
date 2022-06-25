@@ -1,6 +1,6 @@
-package pageUIs;
+package pageUIs.nopCommerce.user;
 
-public class LoginPageUI {
+public class UserLoginPageUI {
 	
 	public static final String EMAIL_TEXBOX = "//input[@id='Email']";
 	public static final String PASSWORD_TEXBOX = "//input[@id='Password']";

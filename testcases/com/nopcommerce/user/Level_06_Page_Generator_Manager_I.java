@@ -13,16 +13,16 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObject.nopCommerce.user.HomePageObject;
-import pageObject.nopCommerce.user.LoginPageObject;
-import pageObject.nopCommerce.user.RegisterPageObject;
+import pageObject.nopCommerce.user.UserHomePageObject;
+import pageObject.nopCommerce.user.UserLoginPageObject;
+import pageObject.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_I extends BaseTest {
 	
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
 	
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, existingEmail, invalidEmail, notFoundEmail, password, wrongPassword;
@@ -34,7 +34,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		driver = getBrowserDriver(browserName);
 		
 		//Khoi tao trang homepage
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		firstName = "John";
 		lastName = "Terry";
@@ -48,7 +48,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage.clickToRegisterLink();
 		
 		//Khoi tao trang register
-		registerPage = new RegisterPageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		System.out.println("Pre-condition - Step 02: Input to required fields");
 		registerPage.inputToFirstnameTextbox(firstName);
@@ -64,7 +64,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		registerPage.clickToLogoutLink();
 		
 		//Khoi tao trang homepage
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 	}
 
 	@Test
@@ -74,7 +74,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage.clicktoLoginLink();
 		
 		//Khoi tao trang login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login_01 - Step 02: Click to login button");
 		loginPage.clickToLoginButton();
@@ -89,7 +89,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage.clicktoLoginLink();
 		
 		//Khoi tao trang login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login_02 - Step 02: Input to textbox");
 		loginPage.inputToEmailTextbox(invalidEmail);
@@ -105,7 +105,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage.clicktoLoginLink();
 		
 		//Khoi tao trang login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login_03 - Step 02: Input to textbox");
 		loginPage.inputToEmailTextbox(notFoundEmail);
@@ -122,7 +122,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage.clicktoLoginLink();
 		
 		//Khoi tao trang login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login_04 - Step 02: Input to textbox");
 		loginPage.inputToEmailTextbox(existingEmail);
@@ -140,7 +140,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage.clicktoLoginLink();
 		
 		//Khoi tao trang login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login_05 - Step 02: Input to textbox");
 		loginPage.inputToEmailTextbox(existingEmail);
@@ -158,7 +158,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		homePage.clicktoLoginLink();
 		
 		//Khoi tao trang login
-		loginPage = new LoginPageObject(driver);
+		loginPage = new UserLoginPageObject(driver);
 		
 		System.out.println("Login_06 - Step 02: Input to textbox");
 		loginPage.inputToEmailTextbox(existingEmail);
@@ -167,7 +167,7 @@ public class Level_06_Page_Generator_Manager_I extends BaseTest {
 		loginPage.clickToLoginButton();
 		
 		//Login thanh cong se ve Homepage -> Khoi tao trang homepage
-		homePage = new HomePageObject(driver);
+		homePage = new UserHomePageObject(driver);
 		
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 	

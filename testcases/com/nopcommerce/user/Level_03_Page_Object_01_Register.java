@@ -11,14 +11,14 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import pageObject.nopCommerce.user.HomePageObject;
-import pageObject.nopCommerce.user.RegisterPageObject;
+import pageObject.nopCommerce.user.UserHomePageObject;
+import pageObject.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_03_Page_Object_01_Register {
 	
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 	
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, email, storedEmail, wrongEmail, password, wrongPassword;
@@ -32,8 +32,8 @@ public class Level_03_Page_Object_01_Register {
 		driver.manage().window().maximize();
 		driver.get("https://demo.nopcommerce.com");
 		
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		firstName = "John";
 		lastName = "Terry";

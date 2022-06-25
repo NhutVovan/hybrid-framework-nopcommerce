@@ -9,14 +9,14 @@ import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import commons.BaseTest;
-import pageObject.nopCommerce.user.HomePageObject;
-import pageObject.nopCommerce.user.RegisterPageObject;
+import pageObject.nopCommerce.user.UserHomePageObject;
+import pageObject.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_04_Multiple_Browser extends BaseTest {
 	
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
 	
 
 	private String firstName, lastName, email, wrongEmail, password, wrongPassword;
@@ -27,8 +27,8 @@ public class Level_04_Multiple_Browser extends BaseTest {
 					
 		driver = getBrowserDriver(browserName);
 		
-		homePage = new HomePageObject(driver);
-		registerPage = new RegisterPageObject(driver);
+		homePage = new UserHomePageObject(driver);
+		registerPage = new UserRegisterPageObject(driver);
 		
 		firstName = "John";
 		lastName = "Terry";

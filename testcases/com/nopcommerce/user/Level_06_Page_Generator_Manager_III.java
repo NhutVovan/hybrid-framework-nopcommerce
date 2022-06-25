@@ -9,18 +9,18 @@ import org.testng.annotations.Test;
 
 import commons.BaseTest;
 import commons.PageGeneratorManager;
-import pageObject.nopCommerce.user.CustomerInfoPageObject;
-import pageObject.nopCommerce.user.HomePageObject;
-import pageObject.nopCommerce.user.LoginPageObject;
-import pageObject.nopCommerce.user.RegisterPageObject;
+import pageObject.nopCommerce.user.UserCustomerInfoPageObject;
+import pageObject.nopCommerce.user.UserHomePageObject;
+import pageObject.nopCommerce.user.UserLoginPageObject;
+import pageObject.nopCommerce.user.UserRegisterPageObject;
 
 public class Level_06_Page_Generator_Manager_III extends BaseTest {
 	
 	private WebDriver driver;
-	private HomePageObject homePage;
-	private RegisterPageObject registerPage;
-	private LoginPageObject loginPage;
-	private CustomerInfoPageObject myAccountPage;
+	private UserHomePageObject homePage;
+	private UserRegisterPageObject registerPage;
+	private UserLoginPageObject loginPage;
+	private UserCustomerInfoPageObject myAccountPage;
 	
 	private String projectPath = System.getProperty("user.dir");
 	private String firstName, lastName, existingEmail, invalidEmail, notFoundEmail, password, wrongPassword;
@@ -31,7 +31,7 @@ public class Level_06_Page_Generator_Manager_III extends BaseTest {
 		
 		driver = getBrowserDriver(browserName);
 		
-		homePage = PageGeneratorManager.getHomePage(driver);
+		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
 		firstName = "John";
 		lastName = "Terry";
