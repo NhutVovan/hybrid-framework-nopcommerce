@@ -1,0 +1,19 @@
+[2022-07-06 10:11:06,578] Register - Step 01: Click to register link
+[2022-07-06 10:11:07,291] Register - Step 02: Input First Name with: John
+[2022-07-06 10:11:07,411] Register - Step 02: Input Last Name with: Terry
+[2022-07-06 10:11:07,508] Register - Step 02: Input Email Name with: Johnterry128@gmail.com
+[2022-07-06 10:11:07,645] Register - Step 02: Input Password with: 123456
+[2022-07-06 10:11:07,750] Register - Step 02: Input Confirm Password with: 123456
+[2022-07-06 10:11:07,840] Register - Step 03: Click to register button
+[2022-07-06 10:11:08,803] Register - Step 04: Check Register Success Message
+[2022-07-06 10:11:08,871]  -------------------------- PASSED -------------------------- 
+[2022-07-06 10:11:08,871] Register - Step 05: Click to logout link
+[2022-07-06 10:11:09,702] Login - Step 06: Click to login link
+[2022-07-06 10:11:10,328] Login - Step 07: Input Email with: Johnterry128@gmail.com
+[2022-07-06 10:11:10,425] Login - Step 07: Input Password with: 123456
+[2022-07-06 10:11:10,517] Login - Step 08: Click to login button
+[2022-07-06 10:11:11,441] Login - Step 09: Check My Account Link is Displayed
+[2022-07-06 10:11:11,526]  -------------------------- PASSED -------------------------- 
+[2022-07-06 10:11:11,526] Login - Step 10: Click to MyAccount link
+[2022-07-06 10:11:12,161] Login - Step 09: Check Customer Info Page is Displayed
+[2022-07-06 10:11:12,257]  -------------------------- FAILED -------------------------- 
