@@ -88,13 +88,13 @@ public class Level_15_ReportNG_Screenshot extends BaseTest {
 		loginPage.clickToLoginButton();
 		
 		log.info("Login - Step 09: Check My Account Link is Displayed");
-		verifyTrue(homePage.isMyAccountLinkDisplayed());
+		Assert.assertFalse(homePage.isMyAccountLinkDisplayed());
 		
 		log.info("Login - Step 10: Click to MyAccount link");
 		customerInfoPage = homePage.clickToMyAccountLink();
 		
-		log.info("Login - Step 09: Check Customer Info Page is Displayed");
-		verifyFalse(customerInfoPage.isCustomerInfoPageDisplayed());
+		log.info("Login - Step 11: Check Customer Info Page is Displayed");
+		Assert.assertFalse(customerInfoPage.isCustomerInfoPageDisplayed());
 	}
 	
 	@AfterClass

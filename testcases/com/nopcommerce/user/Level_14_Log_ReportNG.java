@@ -93,7 +93,7 @@ public class Level_14_Log_ReportNG extends BaseTest {
 		log.info("Login - Step 10: Click to MyAccount link");
 		customerInfoPage = homePage.clickToMyAccountLink();
 		
-		log.info("Login - Step 09: Check Customer Info Page is Displayed");
+		log.info("Login - Step 11: Check Customer Info Page is Displayed");
 		verifyFalse(customerInfoPage.isCustomerInfoPageDisplayed());
 	}
 	

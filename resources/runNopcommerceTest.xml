@@ -3,6 +3,8 @@
 
 	<listeners>
 		<listener class-name="commons.MethodListener"/>
+<!--        <listener class-name="reportConfig.ReportNGListener"/> -->
+        <listener class-name="reportConfig.ExtentReportListenerV2"/>
         <listener class-name="org.uncommons.reportng.HTMLReporter"/>
         <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
 	</listeners>
@@ -10,7 +12,7 @@
   <test name="Run on Firefox">
   <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_14_Log_ReportNG"/>
+      <class name="com.nopcommerce.user.Level_15_ReportNG_Screenshot"/>
     </classes>
   </test> <!-- Test -->
 

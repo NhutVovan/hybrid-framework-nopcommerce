@@ -120,6 +120,10 @@ public class BaseTest {
 		return envUrl;
 	}
 	
+	public WebDriver getDriverInstance() {
+		return this.driverBaseTest;
+	}
+
 	public int GetRandomNumber() {
 		Random Rand = new Random();
 		return Rand.nextInt(999);
