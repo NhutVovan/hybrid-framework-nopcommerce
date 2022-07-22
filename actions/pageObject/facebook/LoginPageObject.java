@@ -13,7 +13,7 @@ public class LoginPageObject extends BasePage {
 	}
 
 	public void clickToCreateNewAccountButton() {
-		waitForClickable(driver, LoginPageUI.CREATE_NEW_ACCOUNT_BUTTON);
+		waitForElementClickable(driver, LoginPageUI.CREATE_NEW_ACCOUNT_BUTTON);
 		clickToElement(driver, LoginPageUI.CREATE_NEW_ACCOUNT_BUTTON);
 	}
 

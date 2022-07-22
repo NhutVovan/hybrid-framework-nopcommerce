@@ -163,7 +163,7 @@ public class BasePage {
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem) {
 		Select select = new Select(getWebElement(driver, xpathLocator));
-		select.selectByValue(textItem);
+		select.selectByVisibleText(textItem);
 	}
 	
 	public void selectItemInDefaultDropdown(WebDriver driver, String xpathLocator, String textItem, String... dynamicValues) {
@@ -274,7 +274,6 @@ public class BasePage {
 	}
 	
 	
-	
 	public boolean isElementDisplayed(WebDriver driver, String xpathLocator, String... dynamicValues) {
 		return getWebElement(driver, getDynamicXpath(xpathLocator, dynamicValues)).isDisplayed();
 	}
@@ -363,6 +362,11 @@ public class BasePage {
 	public void scrollToElement(WebDriver driver, String xpathLocator) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		jsExecutor.executeScript("arguments[0].scrollIntoView(true);", getWebElement(driver, xpathLocator));
+	}
+	
+	public String getElementValueByJS(WebDriver driver, String xpathLocator) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		return (String) jsExecutor.executeScript("return $(document.evaluate(\"" + xpathLocator + "\", document, null, XPathResult.FIRST_ORDERED_NODE_TYPE, null).singleNodeValue).val()");
 	}
 	
 	public void removeAttributeInDOM(WebDriver driver, String xpathLocator, String AttributeRemove) {
@@ -471,12 +475,12 @@ public class BasePage {
 		explicitWait.until(ExpectedConditions.invisibilityOfAllElements(getListWebElement(driver, getDynamicXpath(xpathLocator, dynamicValues))));
 	}
 	
-	public void waitForClickable(WebDriver driver, String xpathLocator) {
+	public void waitForElementClickable(WebDriver driver, String xpathLocator) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(xpathLocator)));
 	}
 	
-	public void waitForClickable(WebDriver driver, String xpathLocator, String... dynamicValues) {
+	public void waitForElementClickable(WebDriver driver, String xpathLocator, String... dynamicValues) {
 		WebDriverWait explicitWait = new WebDriverWait(driver, GlobalConstants.LONG_TIMEOUT);
 		explicitWait.until(ExpectedConditions.elementToBeClickable(getByXpath(getDynamicXpath(xpathLocator, dynamicValues))));
 	}
@@ -487,31 +491,31 @@ public class BasePage {
 	}
 	
 	public UserCustomerInfoPageObject openCustomerInfoPage(WebDriver driver) {
-		waitForClickable( driver, UserBasePageUI.CUSTOMER_INFO_LINK);
+		waitForElementClickable( driver, UserBasePageUI.CUSTOMER_INFO_LINK);
 		clickToElement(driver, UserBasePageUI.CUSTOMER_INFO_LINK);
 		return PageGeneratorManager.getUserCustomerInfoPage(driver);
 	}
 	
 	public UserAddressPageObject openAddressPage(WebDriver driver) {
-		waitForClickable( driver, UserBasePageUI.ADDRESS_LINK);
+		waitForElementClickable( driver, UserBasePageUI.ADDRESS_LINK);
 		clickToElement(driver, UserBasePageUI.ADDRESS_LINK);
 		return PageGeneratorManager.getUserAddressPage(driver);
 	}
 	
 	public UserMyProductReviewsPageObject openMyProductReviewsPage(WebDriver driver) {
-		waitForClickable( driver, UserBasePageUI.MY_PRODUCT_REVIEWS_LINK);
+		waitForElementClickable( driver, UserBasePageUI.MY_PRODUCT_REVIEWS_LINK);
 		clickToElement(driver, UserBasePageUI.MY_PRODUCT_REVIEWS_LINK);
 		return PageGeneratorManager.getUserMyProductReviewsPage(driver);
 	}
 	
 	public UserRewardPointPageObject openRewardPointPage(WebDriver driver) {
-		waitForClickable( driver, UserBasePageUI.REWARD_POINT_LINK);
+		waitForElementClickable( driver, UserBasePageUI.REWARD_POINT_LINK);
 		clickToElement(driver, UserBasePageUI.REWARD_POINT_LINK);
 		return PageGeneratorManager.getUserRewardPointPage(driver);
 	}
 	
 	public BasePage openPagesAtMyAccountByName(WebDriver driver, String pageName) {
-		waitForClickable(driver, UserBasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
+		waitForElementClickable(driver, UserBasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
 		clickToElement(driver, UserBasePageUI.DYNAMIC_PAGES_AT_MY_ACCOUNT_AREA, pageName);
 		switch (pageName) {
 		case "Customer info":
@@ -529,13 +533,13 @@ public class BasePage {
 	}
 	
 	public UserHomePageObject clickToLogoutLinkAtUserPage(WebDriver driver) {
-		waitForClickable( driver, UserBasePageUI.LOGOUT_LINK_AT_USER);
+		waitForElementClickable( driver, UserBasePageUI.LOGOUT_LINK_AT_USER);
 		clickToElement(driver, UserBasePageUI.LOGOUT_LINK_AT_USER);
 		return PageGeneratorManager.getUserHomePage(driver);
 	}
 	
 	public AdminLoginPageObject clickToLogoutLinkAtAdminPage(WebDriver driver) {
-		waitForClickable( driver, UserBasePageUI.LOGOUT_LINK_AT_ADMIN);
+		waitForElementClickable( driver, UserBasePageUI.LOGOUT_LINK_AT_ADMIN);
 		clickToElementByJS(driver, UserBasePageUI.LOGOUT_LINK_AT_ADMIN);
 		return PageGeneratorManager.getAdminLoginPage(driver);
 	}
@@ -556,4 +560,20 @@ public class BasePage {
 		return separator + folderName + separator;
 	}
 	
+	//Pattern Object
+	/**Enter to dynamic textbox by ID
+	 * @param driver
+	 * @param textboxID
+	 * @param valueToSend
+	 */
+	public void inputToTextboxByID(WebDriver driver, String textboxID, String valueToSend) {
+		waitForElementVisible(driver, UserBasePageUI.DYNAMIC_TEXTBOX_BY_ID, textboxID);
+		sendkeyToElement(driver, UserBasePageUI.DYNAMIC_TEXTBOX_BY_ID, valueToSend, textboxID);
+		
+	}
+	
+	public void clickToButtonByText(WebDriver driver, String textValue) {
+		waitForElementClickable(driver, UserBasePageUI.DYNAMIC_BUTTON_BY_TEXT, textValue);
+		clickToElement(driver, UserBasePageUI.DYNAMIC_BUTTON_BY_TEXT, textValue);
+	}
 }

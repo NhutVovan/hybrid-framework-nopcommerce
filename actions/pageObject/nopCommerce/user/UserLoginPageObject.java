@@ -17,7 +17,7 @@ public class UserLoginPageObject extends BasePage {
 	}
 
 	public UserHomePageObject clickToLoginButton() {
-		waitForClickable(driver, UserLoginPageUI.LOGIN_BUTTON);
+		waitForElementClickable(driver, UserLoginPageUI.LOGIN_BUTTON);
 		clickToElement(driver, UserLoginPageUI.LOGIN_BUTTON);
 		//2
 		//return new HomePageObject(driver);

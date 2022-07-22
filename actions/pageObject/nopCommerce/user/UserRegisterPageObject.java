@@ -14,7 +14,7 @@ public class UserRegisterPageObject extends BasePage{
 	}
 	
 	public void clickToRegisterButton() {
-		waitForClickable(driver, UserRegisterPageUI.REGISTER_BUTTON);
+		waitForElementClickable(driver, UserRegisterPageUI.REGISTER_BUTTON);
 		clickToElement(driver, UserRegisterPageUI.REGISTER_BUTTON);
 	}
 
@@ -87,5 +87,7 @@ public class UserRegisterPageObject extends BasePage{
 		waitForElementVisible(driver, UserRegisterPageUI.EXISTING_EMAIL_ERROR_MESSAGE);
 		return getElementText(driver, UserRegisterPageUI.EXISTING_EMAIL_ERROR_MESSAGE);
 	}
+
+		
 
 }
