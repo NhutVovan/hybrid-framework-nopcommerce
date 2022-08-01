@@ -1,6 +1,8 @@
 package commons;
 
+import java.util.Calendar;
 import java.util.List;
+import java.util.Random;
 import java.util.Set;
 import java.util.concurrent.TimeUnit;
 
@@ -575,5 +577,16 @@ public class BasePage {
 	public void clickToButtonByText(WebDriver driver, String textValue) {
 		waitForElementClickable(driver, UserBasePageUI.DYNAMIC_BUTTON_BY_TEXT, textValue);
 		clickToElement(driver, UserBasePageUI.DYNAMIC_BUTTON_BY_TEXT, textValue);
+	}
+
+	// Get random number by date time minute second (no duplicate)
+	public long getRandomNumberByDateTime() {
+		return Calendar.getInstance().getTimeInMillis() % 100000;
+	}
+	
+	// Get random number ( Maybe duplicate)
+	public int GetRandomNumber() {
+		Random Rand = new Random();
+		return Rand.nextInt(999);
 	}
 }

@@ -1,0 +1,19 @@
+[2022-08-01 11:26:29,635] Register - Step 01: Click to register link
+[2022-08-01 11:26:30,602] Register - Step 02: Input First Name with: Harry
+[2022-08-01 11:26:30,719] Register - Step 02: Input Last Name with: Clinton
+[2022-08-01 11:26:30,873] Register - Step 02: Input Email Name with: Harryclinton145540@gmail.com
+[2022-08-01 11:26:31,130] Register - Step 02: Input Password with: 123456
+[2022-08-01 11:26:31,304] Register - Step 02: Input Confirm Password with: 123456
+[2022-08-01 11:26:31,424] Register - Step 03: Click to register button
+[2022-08-01 11:26:33,464] Register - Step 04: Check Register Success Message
+[2022-08-01 11:26:33,556]  -------------------------- PASSED -------------------------- 
+[2022-08-01 11:26:33,556] Register - Step 05: Click to logout link
+[2022-08-01 11:26:34,491] Login - Step 06: Click to login link
+[2022-08-01 11:26:35,166] Login - Step 07: Input Email with: Harryclinton145540@gmail.com
+[2022-08-01 11:26:35,286] Login - Step 07: Input Password with: 123456
+[2022-08-01 11:26:35,372] Login - Step 08: Click to login button
+[2022-08-01 11:26:36,462] Login - Step 09: Check My Account Link is Displayed
+[2022-08-01 11:26:36,540] Login - Step 10: Click to MyAccount link
+[2022-08-01 11:26:38,368] Login - Step 11: Check Customer Info Page is Displayed
+[2022-08-01 11:26:38,478] OS name = windows 10
+[2022-08-01 11:26:38,479] Driver instance name = firefoxdriver: firefox on windows (9e0656bd-086a-401b-8d52-0fa0d88c1efa)

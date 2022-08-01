@@ -52,5 +52,8 @@
 	<classpathentry kind="lib" path="libExtentV2/mongodb-driver-3.0.4.jar"/>
 	<classpathentry kind="lib" path="libExtentV2/mongodb-driver-core-3.0.4.jar"/>
 	<classpathentry kind="lib" path="libExtentV2/sqlite-jdbc-3.8.11.1.jar"/>
+	<classpathentry kind="lib" path="libJackson/jackson-annotations-2.10.0.jar"/>
+	<classpathentry kind="lib" path="libJackson/jackson-core-2.10.0.jar"/>
+	<classpathentry kind="lib" path="libJackson/jackson-databind-2.10.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

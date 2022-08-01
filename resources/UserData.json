@@ -1,0 +1,15 @@
+{
+	"firstname":"Harry",
+	"lastname":"Clinton",
+	"dob":"01/01/1980",
+	"email":"Harryclinton145",
+	"password":"123456",
+	"address":"123 Nguyen Van Troi, Q. Phu Nhuan, TP.HCM",
+	"cc":{	
+		"number":"4444-5555-8888-9999",
+		"billing":"145 Le Duan, Q1"
+	},
+	"product":{	
+		"searchCriteria":"criteria"
+	}
+}
