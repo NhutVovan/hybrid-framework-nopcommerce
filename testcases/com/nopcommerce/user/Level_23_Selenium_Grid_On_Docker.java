@@ -7,7 +7,6 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import com.nopcommerce.data.UserData;
 import com.nopcommerce.data.UserDataMapper;
 
 import commons.BaseTest;
