@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite  name="NopCommerce Grid on Docker" parallel ="tests" thread-count ="2">
+
+<parameter name="appUrl" value="https://demo.nopcommerce.com"/>
+
+	<listeners>
+		<listener class-name="commons.MethodListener"/>
+<!--        <listener class-name="reportConfig.ReportNGListener"/> -->
+        <listener class-name="reportConfig.ExtentReportListenerV2"/>
+        <listener class-name="org.uncommons.reportng.HTMLReporter"/>
+        <listener class-name="org.uncommons.reportng.JUnitXMLReporter"/>
+        <listener class-name="retryConfig.RetryListener"/>
+	</listeners>
+
+  <test name="Run on Chrome">
+  <parameter name="browser" value="chrome"/>
+  <parameter name="envName" value="grid"/>
+  <parameter name="ipAddress" value="localhost"/>
+  <parameter name="portNumber" value="4444"/>
+    <classes>
+      <class name="com.nopcommerce.user.Level_23_Selenium_Grid_On_Docker"/>
+    </classes>
+  </test> 
+  
+  <test name="Run on Firefox">
+  <parameter name="browser" value="firefox"/>
+  <parameter name="envName" value="grid"/>
+  <parameter name="ipAddress" value="localhost"/>
+  <parameter name="portNumber" value="4444"/>
+    <classes>
+      <class name="com.nopcommerce.user.Level_23_Selenium_Grid_On_Docker"/>
+    </classes>
+  </test> <!-- Test -->
+
+</suite> <!-- Suite -->

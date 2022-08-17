@@ -17,6 +17,10 @@ import org.openqa.selenium.opera.OperaDriver;
 import org.testng.Assert;
 import org.testng.Reporter;
 
+import factoryEnvironment.BROWSER;
+import factoryEnvironment.ENVIRONMENT;
+import factoryEnvironment.GridFactory;
+import factoryEnvironment.LocalFactory;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseTest {
@@ -29,16 +33,16 @@ public class BaseTest {
 	}
 	
 	protected WebDriver getBrowserDriver(String browserName) {
-		BrowserList browserList = BrowserList.valueOf(browserName.toUpperCase());
+		BROWSER browserList = BROWSER.valueOf(browserName.toUpperCase());
 		
-		if(browserList == BrowserList.FIREFOX)
+		if(browserList == BROWSER.FIREFOX)
 		{
 			WebDriverManager.firefoxdriver().setup();
 			System.setProperty(FirefoxDriver.SystemProperty.DRIVER_USE_MARIONETTE,"true");
 			System.setProperty(FirefoxDriver.SystemProperty.BROWSER_LOGFILE, GlobalConstants.PROJECT_PATH + "\\browserLogs\\FirefoxLog.log");
 			driverBaseTest = new FirefoxDriver();
 		}
-		else if(browserList == BrowserList.H_FIREFOX)
+		else if(browserList == BROWSER.H_FIREFOX)
 		{
 			WebDriverManager.firefoxdriver().setup();
 			FirefoxOptions options = new FirefoxOptions();
@@ -46,14 +50,14 @@ public class BaseTest {
 			options.addArguments("window-size=1920x1080");
 			driverBaseTest = new FirefoxDriver(options);
 		}
-		else if (browserList == BrowserList.CHROME)
+		else if (browserList == BROWSER.CHROME)
 		{
 			WebDriverManager.chromedriver().setup();
 			System.setProperty("webdriver.chrome.args","--disable-logging");
 			System.setProperty("webdriver.chrome.silentOutput","true");
 			driverBaseTest = new ChromeDriver();
 		}
-		else if (browserList == BrowserList.H_CHROME)
+		else if (browserList == BROWSER.H_CHROME)
 		{
 			WebDriverManager.chromedriver().setup();
 			ChromeOptions options = new ChromeOptions();
@@ -61,17 +65,17 @@ public class BaseTest {
 			options.addArguments("window-size=1920x1080");
 			driverBaseTest = new ChromeDriver(options);
 		}
-		else if (browserList == BrowserList.EDGE)
+		else if (browserList == BROWSER.EDGE)
 		{
 			WebDriverManager.edgedriver().setup();
 			driverBaseTest = new EdgeDriver();
 		}
-		else if (browserList == BrowserList.OPERA)
+		else if (browserList == BROWSER.OPERA)
 		{
 			WebDriverManager.operadriver().setup();
 			driverBaseTest = new OperaDriver();
 		}
-		else if (browserList == BrowserList.IE)
+		else if (browserList == BROWSER.IE)
 		{
 			WebDriverManager.iedriver().arch32().setup();
 			driverBaseTest = new InternetExplorerDriver();
@@ -122,8 +126,57 @@ public class BaseTest {
 		
 		driverBaseTest.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
 		driverBaseTest.manage().window().maximize();
+		//driverBaseTest.get(appUrl);
+		driverBaseTest.get(getEvironmentValue(appUrl));
+		return driverBaseTest;
+	}
+
+	protected WebDriver getBrowserDriver(String browserName, String appUrl, String envName, String ipAddress, String portNumber) {
+		switch (envName) {
+		case "local":
+			driverBaseTest = new LocalFactory(browserName).createDriver();
+			break;
+		case "grid":
+			driverBaseTest = new GridFactory(browserName, ipAddress, portNumber).createDriver();
+			break;
+		case "browserstack":
+			
+			break;
+		case "saucelab":
+	
+			break;
+
+		default:
+			driverBaseTest = new LocalFactory(browserName).createDriver();
+			break;
+		}
+		
+		driverBaseTest.manage().timeouts().implicitlyWait(GlobalConstants.LONG_TIMEOUT, TimeUnit.SECONDS);
+		driverBaseTest.manage().window().maximize();
 		driverBaseTest.get(appUrl);
 		return driverBaseTest;
+	}
+	
+	private String getEvironmentValue(String environmentName) {
+		String envUrl = null;
+		ENVIRONMENT environment = ENVIRONMENT.valueOf(environmentName.toUpperCase());
+		
+		if (environment == ENVIRONMENT.DEV) {
+			envUrl =  "https://demo.guru99.com/v1/";
+		}
+		else if (environment == ENVIRONMENT.TEST){
+			envUrl =  "https://demo.guru99.com/v2/";
+		}
+		else if (environment == ENVIRONMENT.STAGING){
+			envUrl =  "https://demo.guru99.com/v3/";
+		}
+		else if (environment == ENVIRONMENT.PRODUCTION){
+			envUrl =  "https://demo.guru99.com/v4/";
+		}
+		else {
+			
+		}
+		return envUrl;
 	}
 	
 	protected String getInvironmentUrl(String serverName) {

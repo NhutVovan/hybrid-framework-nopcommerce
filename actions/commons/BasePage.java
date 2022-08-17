@@ -350,10 +350,21 @@ public class BasePage {
 	public void hightlightElement(WebDriver driver, String xpathLocator) {
 		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
 		WebElement element = getWebElement(driver, xpathLocator);
+		String hightlightStyle = "border: 2px solid red; border-style:dashed";
 		String originalStyle = element.getAttribute("style");
-		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, "style", "border: 2px solid red;");
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, hightlightStyle);
 		sleepInSecond(1);
 		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, originalStyle);
+	}
+	
+	public void hightlightElement(WebDriver driver, String xpathLocator, String... dynamicValues) {
+		JavascriptExecutor jsExecutor = (JavascriptExecutor) driver;
+		WebElement element = getWebElement(driver, getDynamicXpath(xpathLocator, dynamicValues));
+		String hightlightStyle = "border: 2px solid red; border-style:dashed";
+		String originalStyle = element.getAttribute("style");
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, "style", hightlightStyle);
+		sleepInSecond(1);
+		jsExecutor.executeScript("arguments[0].setAttribute(arguments[1],arguments[2])", element, "style", originalStyle);
 	}
 	
 	public void clickToElementByJS(WebDriver driver, String xpathLocator) {
