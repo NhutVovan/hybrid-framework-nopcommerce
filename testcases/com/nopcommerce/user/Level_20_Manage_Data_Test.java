@@ -49,51 +49,51 @@ public class Level_20_Manage_Data_Test extends BaseTest {
 		log.info("Register - Step 02: Input First Name with: " + firstName);
 		registerPage.inputToTextboxByID(driver, "FirstName", firstName);
 		
-		log.info("Register - Step 02: Input Last Name with: " + lastName);
+		log.info("Register - Step 03: Input Last Name with: " + lastName);
 		registerPage.inputToTextboxByID(driver, "LastName", lastName);
 		
-		log.info("Register - Step 02: Input Email Name with: " + email);
+		log.info("Register - Step 04: Input Email Name with: " + email);
 		registerPage.inputToTextboxByID(driver, "Email", email);
 		
-		log.info("Register - Step 02: Input Password with: " + password);
+		log.info("Register - Step 05: Input Password with: " + password);
 		registerPage.inputToTextboxByID(driver, "Password", password);
 		
-		log.info("Register - Step 02: Input Confirm Password with: " + password);
+		log.info("Register - Step 06: Input Confirm Password with: " + password);
 		registerPage.inputToTextboxByID(driver, "ConfirmPassword", password);
 		
-		log.info("Register - Step 03: Click to register button");
+		log.info("Register - Step 07: Click to register button");
 		registerPage.clickToButtonByText(driver, "Register");
 		
-		log.info("Register - Step 04: Check Register Success Message");
-		verifyEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
+		log.info("Register - Step 08: Check Register Success Message");
+		Assert.assertEquals(registerPage.getRegisterSuccessMessage(), "Your registration completed");
 		
-		log.info("Register - Step 05: Click to logout link");
+		log.info("Register - Step 09: Click to logout link");
 		homePage = registerPage.clickToLogoutLink();
 		
 	}
 	
 	@Test
 	public void User_02_Login() {
-		log.info("Login - Step 06: Click to login link");
+		log.info("Login - Step 01: Click to login link");
 		loginPage = homePage.clicktoLoginLink();
 
-		log.info("Login - Step 07: Input Email with: " + email);
+		log.info("Login - Step 02: Input Email with: " + email);
 		loginPage.inputToTextboxByID(driver, "Email", email);
 		
-		log.info("Login - Step 07: Input Password with: " + password);
+		log.info("Login - Step 03: Input Password with: " + password);
 		loginPage.inputToTextboxByID(driver, "Password", password);
 		
-		log.info("Login - Step 08: Click to login button");
+		log.info("Login - Step 04: Click to login button");
 		loginPage.clickToButtonByText(driver, "Log in");
 		homePage = PageGeneratorManager.getUserHomePage(driver);
 		
-		log.info("Login - Step 09: Check My Account Link is Displayed");
+		log.info("Login - Step 05: Check My Account Link is Displayed");
 		Assert.assertTrue(homePage.isMyAccountLinkDisplayed());
 		
-		log.info("Login - Step 10: Click to MyAccount link");
+		log.info("Login - Step 06: Click to MyAccount link");
 		customerInfoPage = homePage.clickToMyAccountLink();
 		
-		log.info("Login - Step 11: Check Customer Info Page is Displayed");
+		log.info("Login - Step 07: Check Customer Info Page is Displayed");
 		Assert.assertTrue(customerInfoPage.isCustomerInfoPageDisplayed());
 	}
 	

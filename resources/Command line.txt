@@ -1,0 +1,3 @@
+Command line to run on CMD and Jenkins:
+
+java -cp ".\bin;.\libAll\*" org.testng.TestNG resources/runNopcommerceTest.xml

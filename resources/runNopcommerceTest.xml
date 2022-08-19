@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<suite  name="NopCommerce">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite  name="NopCommerce" >
 
 	<listeners>
 		<listener class-name="commons.MethodListener"/>
@@ -13,7 +14,7 @@
   <test name="Run on Firefox">
   <parameter name="browser" value="firefox"/>
     <classes>
-      <class name="com.nopcommerce.user.Level_21_Data_Driven_Test"/>
+      <class name="com.nopcommerce.user.Level_20_Manage_Data_Test"/>
     </classes>
   </test> <!-- Test -->
 
